@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+// Route::get('/', function()
+// {
+// 	return View::make('hello');
+// });
+
+Route::get('/', 'InitialController@index');
+
+Route::get('/testview', function() {
+    return View::make('testview');
 });
