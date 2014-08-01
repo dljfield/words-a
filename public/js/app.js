@@ -3,11 +3,11 @@ angular.module('words', ['ngRoute', 'words.controllers','words.directives'])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: '/home',
+        templateUrl: '/template/home',
         controller: 'HomeController'
     })
     .when('/post/:id', {
-        templateUrl: '/singlepost',
+        templateUrl: '/template/singlepost',
         controller: 'PostController'
     })
     .otherwise({

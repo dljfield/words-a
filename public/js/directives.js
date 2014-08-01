@@ -3,6 +3,6 @@ angular.module('words.directives', [])
 .directive('wordsPost', function() {
     return {
         restrict: 'A',
-        templateUrl: '/template/post'
+        templateUrl: '/template/directive/post'
     }
 });
