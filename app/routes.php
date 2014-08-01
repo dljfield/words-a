@@ -11,21 +11,11 @@
 |
 */
 
-// Route::get('/', function()
-// {
-// 	return View::make('hello');
-// });
-
 Route::get('/', 'InitialController@index');
 
-Route::get('/template/home', function() {
-    return View::make('/template/home');
-});
+// ###########
+// ### API ###
+// ###########
 
-Route::get('/template/singlepost', function() {
-    return View::make('/template/single_post');
-});
-
-Route::get('/template/directive/post', function() {
-    return View::make('/template/directive/post');
-});
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/{id}', 'PostController@show');
