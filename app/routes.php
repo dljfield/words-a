@@ -18,6 +18,14 @@
 
 Route::get('/', 'InitialController@index');
 
-Route::get('/testview', function() {
-    return View::make('testview');
+Route::get('/home', function() {
+    return View::make('home');
+});
+
+Route::get('/singlepost', function() {
+    return View::make('single_post');
+});
+
+Route::get('/template/post', function() {
+    return View::make('/template/post');
 });

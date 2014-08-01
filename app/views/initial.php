@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Initial Page</title>
+    <title>thedebonair/words</title>
 
+    <!-- STYLES -->
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="js/bower_components/angular/angular.min.js"></script>
-    <script src="js/bower_components/angular-route/angular-route.min.js"></script>
+    <!-- ANGULAR -->
+    <script src="js/bower_components/angular/angular.js"></script>
+    <script src="js/bower_components/angular-route/angular-route.js"></script>
 
 </head>
 <body ng-app="words">
-    <h1>Initial Page</h1>
-
-    <div ng-controller="TestController">
-        {{ testData.message }}
-    </div>
+    <h1>words</h1>
 
     <div ng-view></div>
 
-    <!-- ANGULAR -->
+    <!-- APP -->
     <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
 
 </body>
 </html>
