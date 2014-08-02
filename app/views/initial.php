@@ -10,6 +10,7 @@
     <!-- ANGULAR -->
     <script src="js/bower_components/angular/angular.js"></script>
     <script src="js/bower_components/angular-route/angular-route.js"></script>
+    <script src="js/bower_components/angular-resource/angular-resource.js"></script>
 
 </head>
 <body ng-app="words">
@@ -21,6 +22,7 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
 
 </body>
 </html>

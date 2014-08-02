@@ -1,18 +1,7 @@
 angular.module('words.controllers', [])
 
-.controller('HomeController', function($scope) {
-    $scope.home = {
-        posts: [
-            {
-                title: 'Test Post Title',
-                body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.'
-            },
-            {
-                title: 'Test Post Title 2',
-                body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.'
-            }
-        ]
-    };
+.controller('HomeController', function($scope, PostService) {
+    $scope.posts = PostService.query();
 })
 
 .controller('PostController', function($scope) {

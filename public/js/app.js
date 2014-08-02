@@ -1,4 +1,4 @@
-angular.module('words', ['ngRoute', 'words.controllers','words.directives'])
+angular.module('words', ['ngRoute', 'words.controllers','words.directives', 'words.services'])
 
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider
