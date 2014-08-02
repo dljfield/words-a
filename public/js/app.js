@@ -11,7 +11,7 @@ angular.module('words', ['ngRoute', 'words.controllers','words.directives', 'wor
         controller: 'HomeController'
     })
     .when('/posts/:id', {
-        templateUrl: '/templates/singlepost.html',
+        templateUrl: '/templates/single_post.html',
         controller: 'PostController'
     })
     .otherwise({
