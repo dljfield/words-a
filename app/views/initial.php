@@ -12,11 +12,24 @@
     <script src="js/bower_components/angular-route/angular-route.js"></script>
     <script src="js/bower_components/angular-resource/angular-resource.js"></script>
 
+
 </head>
 <body ng-app="words">
-    <h1>words</h1>
+
+    <div class="container">
+
+    <nav>
+        <h1>thedebonair/words</h1>
+        <ul>
+            <li><a href="/#/about">About</a></li>
+        </ul>
+    </nav>
+
+
 
     <div ng-view></div>
+
+    </div>
 
     <!-- APP -->
     <script src="js/app.js"></script>

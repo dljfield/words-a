@@ -2,3 +2,19 @@ body {
     font-family: sans-serif;
     background-color: #CCC;
 }
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.post {
+    background-color: white;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+h3 {
+    margin: 0px;
+}

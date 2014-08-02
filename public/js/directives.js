@@ -1,8 +1,15 @@
 angular.module('words.directives', [])
 
-.directive('wordsPost', function() {
+.directive('wordsMultiPost', function() {
     return {
         restrict: 'A',
-        templateUrl: '/templates/directive/post.html',
+        templateUrl: '/templates/directive/multi-post.html',
+    }
+})
+
+.directive('wordsSinglePost', function() {
+    return {
+        restrict: 'A',
+        templateUrl: '/templates/directive/single-post.html'
     }
 });

@@ -6,6 +6,9 @@ angular.module('words', ['ngRoute', 'words.controllers','words.directives', 'wor
         templateUrl: '/templates/home.html',
         controller: 'HomeController'
     })
+    .when('/about', {
+        templateUrl: '/templates/about.html'
+    })
     .when('/posts', {
         templateUrl: '/templates/home.html',
         controller: 'HomeController'

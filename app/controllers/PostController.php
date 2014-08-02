@@ -4,7 +4,14 @@ class PostController extends BaseController
 {
     public function index()
     {
-        return Post::all()->toJson();
+
+        $posts = Post::all();
+
+        foreach ($posts as $post) {
+            $post['body'] = str_limit($post['body'], $limit = 1, $end = '...');
+        }
+
+        return $posts->toJson();
     }
 
     public function show($id)
