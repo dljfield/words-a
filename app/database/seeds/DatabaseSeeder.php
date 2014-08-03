@@ -22,16 +22,18 @@ class PostsTableSeeder extends Seeder {
 	{
 		DB::table('posts')->truncate();
 
+		$body = "### Test Title \n A paragraph";
+
 		$posts = [
-			['title' => 'First Post', 'body' => 'First post body.'],
-			['title' => 'Second Post', 'body' => 'Second post body.'],
-			['title' => 'Third Post', 'body' => 'Third post body.'],
-			['title' => 'Fourth Post', 'body' => 'Fourth post body.'],
-			['title' => 'Fifth Post', 'body' => 'Fifth post body.']
+			['title' => 'First Post', 'body' => $body],
+			['title' => 'Second Post', 'body' => $body],
+			['title' => 'Third Post', 'body' => $body],
+			['title' => 'Fourth Post', 'body' => $body],
+			['title' => 'Fifth Post', 'body' => $body]
 		];
 
 		foreach ($posts as $post) {
-			Posts::create($post);
+			Post::create($post);
 		}
 
 	}

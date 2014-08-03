@@ -6,13 +6,6 @@
 
     <!-- STYLES -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- ANGULAR -->
-    <script src="js/bower_components/angular/angular.js"></script>
-    <script src="js/bower_components/angular-route/angular-route.js"></script>
-    <script src="js/bower_components/angular-resource/angular-resource.js"></script>
-
-
 </head>
 <body ng-app="words">
 
@@ -30,6 +23,14 @@
     <div ng-view></div>
 
     </div>
+
+    <!-- ANGULAR -->
+    <script src="js/bower_components/angular/angular.js"></script>
+    <script src="js/bower_components/angular-route/angular-route.js"></script>
+    <script src="js/bower_components/angular-resource/angular-resource.js"></script>
+
+    <!-- LIB -->
+    <script src="js/bower_components/showdown/compressed/showdown.js"></script>
 
     <!-- APP -->
     <script src="js/app.js"></script>

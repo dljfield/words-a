@@ -4,6 +4,6 @@ angular.module('words.controllers', [])
     $scope.posts = PostService.query();
 })
 
-.controller('PostController', function($scope, $routeParams, PostService) {
+.controller('PostController', function($scope, $routeParams, $q, PostService) {
     $scope.post = PostService.get({id: $routeParams.id});
-});
+})
