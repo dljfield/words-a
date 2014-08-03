@@ -14,8 +14,6 @@ angular.module('words.directives', [])
     }
 })
 
-// Works but isn't pretty because the attribute remains on the DOM.
-// This is going to be very undesirable in a full post!
 .directive('wordsMarkdown', function() {
     return {
         restrict: 'E',
@@ -24,6 +22,7 @@ angular.module('words.directives', [])
         link: function($scope, element, attrs) {
             attrs.$observe('content', function(value) {
                 var showdown = new Showdown.converter();
+                element.removeAttr('content');
                 element.html(showdown.makeHtml(value));
             });
         }
