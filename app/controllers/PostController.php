@@ -5,7 +5,7 @@ class PostController extends BaseController
     public function index()
     {
 
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'DESC')->get();
 
         // foreach ($posts as $post) {
         //     $post['body'] = str_limit($post['body'], $limit = 100, $end = '...');
