@@ -7,9 +7,9 @@ class PostController extends BaseController
 
         $posts = Post::all();
 
-        foreach ($posts as $post) {
-            $post['body'] = str_limit($post['body'], $limit = 100, $end = '...');
-        }
+        // foreach ($posts as $post) {
+        //     $post['body'] = str_limit($post['body'], $limit = 100, $end = '...');
+        // }
 
         return $posts->toJson();
     }

@@ -23,13 +23,14 @@ class PostsTableSeeder extends Seeder {
 		DB::table('posts')->truncate();
 
 		$body = "### Test Title \n A paragraph";
+		$summary = "Summary of post.";
 
 		$posts = [
-			['title' => 'First Post', 'body' => $body],
-			['title' => 'Second Post', 'body' => $body],
-			['title' => 'Third Post', 'body' => $body],
-			['title' => 'Fourth Post', 'body' => $body],
-			['title' => 'Fifth Post', 'body' => $body]
+			['title' => 'First Post', 'body' => $body, 'summary' => $summary],
+			['title' => 'Second Post', 'body' => $body, 'summary' => $summary],
+			['title' => 'Third Post', 'body' => $body, 'summary' => $summary],
+			['title' => 'Fourth Post', 'body' => $body, 'summary' => $summary],
+			['title' => 'Fifth Post', 'body' => $body, 'summary' => $summary]
 		];
 
 		foreach ($posts as $post) {
