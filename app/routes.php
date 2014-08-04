@@ -19,4 +19,4 @@ Route::get('/', 'InitialController@index');
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/{id}', 'PostController@show');
 
-Route::post('/posts', 'PostController@save');
+Route::post('/posts', 'PostController@store');

@@ -24,7 +24,7 @@ angular.module('words.controllers', [])
         }, function(success) {
             alert('Success')
         }, function(error) {
-            alert('Error')
+            alert(error.data.message);
         });
     }
 
