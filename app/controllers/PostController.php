@@ -18,4 +18,17 @@ class PostController extends BaseController
     {
         return Post::find($id)->toJson();
     }
+
+    public function save()
+    {
+        $post = new Post();
+
+        $input = Input::all();
+
+        $post->title   = $input['title'];
+        $post->body    = $input['body'];
+        $post->summary = $input['summary'];
+
+        $post->save();
+    }
 }

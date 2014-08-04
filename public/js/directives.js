@@ -14,6 +14,13 @@ angular.module('words.directives', [])
     }
 })
 
+.directive('newPostForm', function() {
+    return {
+        restrict: 'EA',
+        templateUrl: '/templates/directive/create_post_form.html'
+    }
+})
+
 .directive('wordsMarkdown', function() {
     return {
         restrict: 'E',

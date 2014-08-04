@@ -1,0 +1,19 @@
+<form novalidate>
+
+    <label for="postTitle">Title</label>
+    <input type="text" name="postTitle" id="postTitle" ng-model="post.title"/>
+
+    <br>
+
+    <label for="postBody">Body</label>
+    <textarea name="postBody" id="postBody" cols="30" rows="10" ng-model="post.body"></textarea>
+
+    <br>
+
+    <label for="postSummary">Summary</label>
+    <textarea name="postSummary" id="postSummary" cols="30" rows="10" ng-model="post.summary"></textarea>
+
+    <br>
+
+    <button ng-click="savePost()">Save Post</button>
+</form>
