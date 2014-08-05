@@ -9,6 +9,10 @@ angular.module('words', ['ngRoute', 'words.controllers','words.directives', 'wor
     .when('/about', {
         templateUrl: '/templates/about.html'
     })
+    .when('/login', {
+        templateUrl: '/templates/login.html',
+        controller: 'LoginController'
+    })
     .when('/posts/create', {
         templateUrl: '/templates/create_post.html',
         controller: 'CreatePostController'

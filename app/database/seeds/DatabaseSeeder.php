@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('PostsTableSeeder');
+		$this->call('UsersTableSeeder');
 	}
 
 }
@@ -37,6 +38,17 @@ class PostsTableSeeder extends Seeder {
 			Post::create($post);
 		}
 
+	}
+
+}
+
+class UsersTableSeeder extends Seeder {
+
+	public function run()
+	{
+		DB::table('users')->truncate();
+
+		User::create(['email' => 'a@a.a', 'password' => Hash::make('aaa')]);
 	}
 
 }

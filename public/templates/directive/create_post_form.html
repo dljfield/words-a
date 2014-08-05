@@ -1,4 +1,4 @@
-<form name="newPostForm" novalidate>
+<form name="newPostForm" ng-submit="savePost()" novalidate>
 
     <!-- POST TITLE -->
 
@@ -31,6 +31,6 @@
     <br>
 
     <!-- SUBMIT -->
-    <button ng-click="savePost()" ng-disabled="newPostForm.$invalid">Save Post</button>
+    <button type="submit" ng-disabled="newPostForm.$invalid">Save Post</button>
 
 </form>

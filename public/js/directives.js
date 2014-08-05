@@ -21,6 +21,13 @@ angular.module('words.directives', [])
     }
 })
 
+.directive('loginForm', function() {
+    return {
+        restrict: 'EA',
+        templateUrl: '/templates/directive/login_form.html'
+    }
+})
+
 .directive('wordsMarkdown', function() {
     return {
         restrict: 'E',

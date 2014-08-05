@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="words">
 <head>
     <meta charset="UTF-8">
     <title>thedebonair/words</title>
@@ -7,7 +7,7 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-app="words">
+<body ng-controller="ApplicationController">
 
     <div class="container">
 
