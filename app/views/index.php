@@ -14,6 +14,7 @@
                 <li><a ui-sref="home">Home</a></li>
                 <li><a ui-sref="about">About</a></li>
                 <li><a ui-sref="posts_create">New Post</a></li>
+                <li><a ui-sref="login">Log In</a></li>
             </ul>
         </nav>
 

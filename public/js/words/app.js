@@ -25,9 +25,20 @@ angular.module('words', ['ui.router'])
             templateUrl: '/templates/posts/create.html'
         })
 
+        // need to make this show unpublished shizzle
+        .state('unpublished_posts', {
+            url: '/posts/unpublished',
+            templateUrl: '/templates/posts/index.html'
+        })
+
         .state('posts_single', {
             url: '/posts/:id',
             templateUrl: '/templates/posts/single.html'
+        })
+
+        .state('login', {
+            url: '/login',
+            templateUrl: '/templates/auth/login.html'
         })
 
     $locationProvider.html5Mode(false) // make this work properly with the server-side routes
