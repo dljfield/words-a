@@ -1,1 +1,1 @@
-This is the index for /
+This is the index for words.app and will provide the initial page for the Angular application

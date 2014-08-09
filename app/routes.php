@@ -18,28 +18,12 @@ Route::get('/', 'IndexController@index');
 // *******
 
 // POSTS
-Route::get('/posts', 'PostsController@index');
-Route::get('/posts/unpublished', 'PostsController@unpublished');
-Route::get('/posts/{id}', 'PostsController@show');
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/unpublished', 'PostController@unpublished');
+Route::get('/posts/{id}', 'PostController@show');
 
-Route::post('/posts', 'PostsController@store');
+Route::post('/posts', 'PostController@store');
 
 // AUTH
 Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
-
-
-// *************
-// * TEMPLATES *
-// *************
-
-Route::group(['prefix' => 'template'], function()
-{
-    // POSTS
-    Route::get('/posts', 'TemplateController@postsIndex');
-    Route::get('/posts/single', 'TemplateController@postsShow');
-    Route::get('/posts/create', 'TemplateController@postsCreate');
-
-    // AUTH
-    Route::get('/login', 'TemplateController@loginShow');
-});
