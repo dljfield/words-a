@@ -11,42 +11,35 @@
 |
 */
 
-Route::get('/', 'InitialController@index');
+Route::get('/', 'IndexController@index');
 
-// ###########
-// ### API ###
-// ###########
-Route::get('/posts', 'PostController@index');
-Route::get('/posts/{id}', 'PostController@show');
+// *******
+// * API *
+// *******
 
-Route::post('/posts', 'PostController@store');
+// POSTS
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/unpublished', 'PostsController@unpublished');
+Route::get('/posts/{id}', 'PostsController@show');
 
-Route::post('/login', function() {
+Route::post('/posts', 'PostsController@store');
 
-    $email = Input::get('email');
-    $password = Input::get('password');
+// AUTH
+Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout');
 
-    if (Auth::attempt(array('email' => $email, 'password' => $password))) {
 
-        Session::put('user', [
-                'email' => $email,
-                'token' => Session::token()
-            ]);
+// *************
+// * TEMPLATES *
+// *************
 
-        return Response::make(Session::get('user'), 200);
-    } else {
-        return Response::make('Failure', 401);
-    }
+Route::group(['prefix' => 'template'], function()
+{
+    // POSTS
+    Route::get('/posts', 'TemplateController@postsIndex');
+    Route::get('/posts/single', 'TemplateController@postsShow');
+    Route::get('/posts/create', 'TemplateController@postsCreate');
 
-});
-
-Route::post('/login/testing', function() {
-
-    $user = Session::get('user');
-
-    if (Input::get('email') == $user['email'] && Input::get('token') == $user['token']) {
-        return "wooo";
-    } else {
-        return Session::all();
-    }
+    // AUTH
+    Route::get('/login', 'TemplateController@loginShow');
 });
