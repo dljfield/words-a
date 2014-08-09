@@ -20,13 +20,14 @@ angular.module('words', ['ui.router'])
             templateUrl: 'templates/about.html'
         })
 
-        .state('posts_single', {
-            // single post
-        })
-
         .state('posts_create', {
             url: '/posts/create',
             templateUrl: '/templates/posts/create.html'
+        })
+
+        .state('posts_single', {
+            url: '/posts/:id',
+            templateUrl: '/templates/posts/single.html'
         })
 
     $locationProvider.html5Mode(false) // make this work properly with the server-side routes
