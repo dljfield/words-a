@@ -1,26 +1,33 @@
 angular.module('words', ['ui.router'])
 
-.config(function($stateProvider) {
-  $stateProvider
-    .state('index', {
-      url: "",
-      views: {
-        "viewA": { template: "index.viewA" },
-        "viewB": { template: "index.viewB" }
-      }
-    })
-    .state('route1', {
-      url: "/route1",
-      views: {
-        "viewA": { template: "route1.viewA" },
-        "viewB": { template: "route1.viewB" }
-      }
-    })
-    .state('route2', {
-      url: "/route2",
-      views: {
-        "viewA": { template: "route2.viewA" },
-        "viewB": { template: "route2.viewB" }
-      }
-    })
-});
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    // Default
+    $urlRouterProvider.otherwise('/');
+
+    // States
+    $stateProvider
+
+        // Index of posts
+        .state('home', {
+            url: '/',
+            templateUrl: '/templates/posts/index.html'
+        })
+
+        // About page
+        .state('about', {
+            url: '/about',
+            templateUrl: 'templates/about.html'
+        })
+
+        .state('posts_single', {
+            // single post
+        })
+
+        .state('posts_create', {
+            url: '/posts/create',
+            templateUrl: '/templates/posts/create.html'
+        })
+
+    $locationProvider.html5Mode(false) // make this work properly with the server-side routes
+})

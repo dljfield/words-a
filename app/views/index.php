@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>thedebonair/words</title>
+    <base href="/">
 </head>
 <body>
 
-    <div ui-view="viewA"></div>
-    <div ui-view="viewB"></div>
-    <!-- Also a way to navigate -->
-    <a ui-sref="route1">Route 1</a>
-    <a ui-sref="route2">Route 2</a>
+    <div class="container">
+        <nav>
+            <h1>thedebonair/words</h1>
+            <ul>
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="about">About</a></li>
+                <li><a ui-sref="posts_create">New Post</a></li>
+            </ul>
+        </nav>
 
+        <div ui-view></div>
+    </div>
 
     <!-- ANGULAR -->
     <script src="js/bower_components/angular/angular.js"></script>
