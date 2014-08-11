@@ -1,0 +1,13 @@
+<nav>
+    <h1>thedebonair/words</h1>
+    <ul>
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="about">About</a></li>
+        <li ng-if="loggedIn()"><a ui-sref="posts_create">New Post</a></li>
+        <li ng-switch on="loggedIn()">
+            <a ui-sref="login" ng-switch-when="false">Log In</a>
+            <a href="#" on-click="logout()" ng-switch-when="true">Log Out</a>
+        </li>
+        <li ng-if="user">Hello, {{ user.name }}.</li>
+    </ul>
+</nav>

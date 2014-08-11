@@ -1,19 +1,23 @@
 angular.module('words.services.Session', [])
 
-.service('Session', function() {
+.service('Session', function($window) {
 
     this.create = function(user, token) {
-        this.token = token;
+        $window.sessionStorage.token = token;
         this.user = user;
     };
 
     this.destroy = function() {
-        delete this.token;
+        delete $window.sessionStorage.token;
         this.user = null;
     };
 
     this.isAuthenticated = function() {
         return !!this.user;
+    };
+
+    this.getToken = function() {
+        return $window.sessionStorage.token;
     };
 
     return this;
