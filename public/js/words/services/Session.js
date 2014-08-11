@@ -14,11 +14,7 @@ angular.module('words.services.Session', [])
 
     this.isAuthenticated = function() {
         return !!this.user;
-    }
-
-    this.getToken = function() {
-        return this.token;
-    }
+    };
 
     return this;
 })

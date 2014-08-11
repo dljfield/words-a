@@ -6,7 +6,7 @@ angular.module('words.services.AuthService', [])
         return $http
         .post('/login', credentials)
         .success(function(data, status, headers, config) {
-            Session.create({} /* replace with some actual user information */, data.token);
+            Session.create(data.user, data.token);
             console.log(data);
         })
         .error(function(data, status, headers, config) {
@@ -14,6 +14,10 @@ angular.module('words.services.AuthService', [])
             console.log(data);
         });
     };
+
+    this.logout = function() {
+        Session.destroy();
+    }
 
     this.isAuthenticated = function() {
         return Session.isAuthenticated();

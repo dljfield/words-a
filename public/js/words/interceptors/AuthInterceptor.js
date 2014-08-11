@@ -5,8 +5,8 @@ angular.module('words.interceptors.AuthInterceptor', [])
         request: function(config) {
             config.headers = config.headers || {};
 
-            if (Session.getToken()) {
-                config.headers.Authorization = Session.getToken();
+            if (Session.token) {
+                config.headers.Authorization = Session.token;
             }
 
             return config;

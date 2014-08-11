@@ -15,16 +15,20 @@ class AuthController extends BaseController {
 
         // replace this with making a proper token
         $profile = [
-            'name' => 'testatron',
-            'type' => 'explosion'
+            'name' => 'Test User'
+        ];
+
+        $claims = [
+            'iss' => 'thedebonair',
+            'iat' => date("U")
         ];
 
         // find an appropriate place to store the key
-        $token = JWT::encode($profile, 'test_key');
+        $token = JWT::encode($claims, 'test_key');
 
         $response = [
             'token' => $token,
-            'other' => 'swag'
+            'user' => $profile
         ];
 
         return Response::json($response);

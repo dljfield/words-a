@@ -51,9 +51,18 @@ Route::filter('auth', function()
 Route::filter('auth.token', function()
 {
 	if (Request::header('Authorization')) {
-	    $token = JWT::decode(Request::header('Authorization'), 'test_key');
 
-	    return Response::make('swiggity swooty', 200);
+		try {
+			$token = JWT::decode(Request::header('Authorization'), 'test_key');
+
+			if ($token->iat != date("U")) {
+				return Response::make('The authorization token has expired.', 401);
+			}
+
+		} catch (Exception $e) {
+			return Response::make('The authorization token is not valid.', 401);
+		}
+
 	} else {
 	    return Response::make('Unauthorized', 401);
 	}
