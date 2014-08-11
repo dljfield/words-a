@@ -2,6 +2,8 @@ angular.module('words', [
     'ui.router',
     'words.controllers.AuthController',
     'words.controllers.UnpublishedController',
+    'words.services.AuthService',
+    'words.services.Session',
     'words.interceptors.AuthInterceptor'
 ])
 

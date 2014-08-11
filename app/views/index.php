@@ -29,6 +29,8 @@
     <script src="js/words/app.js"></script>
     <script src="js/words/controllers/AuthController.js"></script>
     <script src="js/words/controllers/UnpublishedController.js"></script>
+    <script src="js/words/services/AuthService.js"></script>
+    <script src="js/words/services/Session.js"></script>
     <script src="js/words/interceptors/AuthInterceptor.js"></script>
 
 </body>

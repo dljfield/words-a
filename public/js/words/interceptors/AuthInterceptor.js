@@ -1,12 +1,12 @@
 angular.module('words.interceptors.AuthInterceptor', [])
 
-.factory('AuthInterceptor', function($q, $window) {
+.factory('AuthInterceptor', function($q, Session) {
     return {
         request: function(config) {
             config.headers = config.headers || {};
 
-            if ($window.sessionStorage.token) {
-                config.headers.Authorization = $window.sessionStorage.token;
+            if (Session.getToken()) {
+                config.headers.Authorization = Session.getToken();
             }
 
             return config;
