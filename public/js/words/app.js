@@ -1,6 +1,11 @@
-angular.module('words', ['ui.router', 'words.controllers.AuthController'])
+angular.module('words', [
+    'ui.router',
+    'words.controllers.AuthController',
+    'words.controllers.UnpublishedController',
+    'words.interceptors.AuthInterceptor'
+])
 
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
     // Default
     $urlRouterProvider.otherwise('/');
@@ -20,15 +25,17 @@ angular.module('words', ['ui.router', 'words.controllers.AuthController'])
             templateUrl: 'templates/about.html'
         })
 
+        // protect
         .state('posts_create', {
             url: '/posts/create',
             templateUrl: '/templates/posts/create.html'
         })
 
-        // need to make this show unpublished shizzle
+        // protect
         .state('unpublished_posts', {
             url: '/posts/unpublished',
-            templateUrl: '/templates/posts/index.html'
+            templateUrl: '/templates/posts/index.html',
+            controller: 'UnpublishedController'
         })
 
         .state('posts_single', {
@@ -43,4 +50,6 @@ angular.module('words', ['ui.router', 'words.controllers.AuthController'])
         })
 
     $locationProvider.html5Mode(false) // make this work properly with the server-side routes
+
+    $httpProvider.interceptors.push('AuthInterceptor');
 })

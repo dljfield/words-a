@@ -48,6 +48,16 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('auth.token', function()
+{
+	if (Request::header('Authorization')) {
+	    $token = JWT::decode(Request::header('Authorization'), 'test_key');
+
+	    return Response::make('swiggity swooty', 200);
+	} else {
+	    return Response::make('Unauthorized', 401);
+	}
+});
 
 Route::filter('auth.basic', function()
 {

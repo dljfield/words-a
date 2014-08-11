@@ -28,6 +28,8 @@
     <!-- WORDS.APP -->
     <script src="js/words/app.js"></script>
     <script src="js/words/controllers/AuthController.js"></script>
+    <script src="js/words/controllers/UnpublishedController.js"></script>
+    <script src="js/words/interceptors/AuthInterceptor.js"></script>
 
 </body>
 </html>

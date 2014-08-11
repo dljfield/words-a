@@ -22,7 +22,12 @@ class AuthController extends BaseController {
         // find an appropriate place to store the key
         $token = JWT::encode($profile, 'test_key');
 
-        return Response::json($token);
+        $response = [
+            'token' => $token,
+            'other' => 'swag'
+        ];
+
+        return Response::json($response);
 
     }
 
