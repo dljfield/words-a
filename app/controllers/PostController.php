@@ -10,6 +10,7 @@ class PostController extends BaseController {
     public function unpublished()
     {
         // return JSON containing all unpublished posts
+        return "Unpublished posts.";
     }
 
     public function show($id)

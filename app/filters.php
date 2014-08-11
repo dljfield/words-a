@@ -48,21 +48,15 @@ Route::filter('auth', function()
 	}
 });
 
-Route::filter('auth.token', function()
+// Filter for authenticating a JWT
+Route::filter('auth.jwt_token', function()
 {
 	if (Request::header('Authorization')) {
-
 		try {
 			$token = JWT::decode(Request::header('Authorization'), 'test_key');
-
-			if ($token->iat != date("U")) {
-				return Response::make('The authorization token has expired.', 401);
-			}
-
 		} catch (Exception $e) {
 			return Response::make('The authorization token is not valid.', 401);
 		}
-
 	} else {
 	    return Response::make('Unauthorized', 401);
 	}
