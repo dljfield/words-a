@@ -1,1 +1,9 @@
-/templates/auth/login.html
+<form ng-submit="submit()" novalidate>
+    <label for="email">Email: </label>
+    <input type="text" name="email" ng-model="credentials.email" placeholder="Email" />
+
+    <label for="password"></label>
+    <input type="password" name="password" ng-model="credentials.password" placeholder="Password" />
+
+    <button type="submit">Log In</button>
+</form>

@@ -27,6 +27,7 @@
 
     <!-- WORDS.APP -->
     <script src="js/words/app.js"></script>
+    <script src="js/words/controllers/AuthController.js"></script>
 
 </body>
 </html>

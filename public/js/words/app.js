@@ -1,4 +1,4 @@
-angular.module('words', ['ui.router'])
+angular.module('words', ['ui.router', 'words.controllers.AuthController'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -38,7 +38,8 @@ angular.module('words', ['ui.router'])
 
         .state('login', {
             url: '/login',
-            templateUrl: '/templates/auth/login.html'
+            templateUrl: '/templates/auth/login.html',
+            controller: 'AuthController'
         })
 
     $locationProvider.html5Mode(false) // make this work properly with the server-side routes
