@@ -6,13 +6,14 @@ class AuthController extends BaseController {
     {
         $input = Input::all();
 
-        // replace this with getting an actual user from the database n stuff
-        if ($input['email'] != 'a@a.a' || $input['password'] != 'aaa') {
+        $user = User::where('email', '=', $input['email'])->first();
+
+        if (!$user || !Hash::check($input['password'], $user->password)) {
             return Response::make('No user could be found with this email and password', 401);
         }
 
         $profile = [
-            'name' => 'Test User'
+            'name' => $user->name
         ];
 
         $claims = [
