@@ -9,7 +9,7 @@
 
     <div class="container">
         <!-- Pull this out into a directive -->
-        <nav ng-controller="NavController">
+        <!-- <nav ng-controller="NavController">
             <h1>thedebonair/words</h1>
             <ul>
                 <li><a ui-sref="home">Home</a></li>
@@ -17,11 +17,13 @@
                 <li ng-if="loggedIn()"><a ui-sref="posts_create">New Post</a></li>
                 <li ng-switch on="loggedIn()">
                     <a ui-sref="login" ng-switch-when="false">Log In</a>
-                    <a href="#" on-click="logout()" ng-switch-when="true">Log Out</a>
+                    <button on-click="logout()" ng-switch-when="true">Log Out</button>
                 </li>
                 <li ng-if="user">Hello, {{ user.name }}.</li>
             </ul>
-        </nav>
+        </nav> -->
+
+        <main-navigation></main-navigation>
 
         <div ui-view></div>
     </div>
@@ -37,6 +39,7 @@
     <script src="js/words/controllers/NavController.js"></script>
     <script src="js/words/services/AuthService.js"></script>
     <script src="js/words/services/Session.js"></script>
+    <script src="js/words/directives/MainNavigation.js"></script>
     <script src="js/words/interceptors/AuthInterceptor.js"></script>
 
 </body>

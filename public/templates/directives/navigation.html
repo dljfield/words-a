@@ -6,7 +6,7 @@
         <li ng-if="loggedIn()"><a ui-sref="posts_create">New Post</a></li>
         <li ng-switch on="loggedIn()">
             <a ui-sref="login" ng-switch-when="false">Log In</a>
-            <a href="#" on-click="logout()" ng-switch-when="true">Log Out</a>
+            <button ng-click="logout()" ng-switch-when="true">Log Out</button>
         </li>
         <li ng-if="user">Hello, {{ user.name }}.</li>
     </ul>

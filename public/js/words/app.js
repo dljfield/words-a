@@ -5,6 +5,7 @@ angular.module('words', [
     'words.controllers.NavController',
     'words.services.AuthService',
     'words.services.Session',
+    'words.directives.MainNavigation',
     'words.interceptors.AuthInterceptor'
 ])
 

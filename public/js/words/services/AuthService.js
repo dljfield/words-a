@@ -1,6 +1,6 @@
 angular.module('words.services.AuthService', [])
 
-.factory('AuthService', function($http, Session) {
+.factory('AuthService', function($rootScope, $http, Session) {
 
     this.login = function(credentials) {
         return $http
@@ -8,6 +8,7 @@ angular.module('words.services.AuthService', [])
         .success(function(data, status, headers, config) {
             Session.create(data.user, data.token);
             console.log(data);
+            $rootScope.$broadcast('auth-login');
         })
         .error(function(data, status, headers, config) {
             Session.destroy();
@@ -17,6 +18,7 @@ angular.module('words.services.AuthService', [])
 
     this.logout = function() {
         Session.destroy();
+        $rootScope.$broadcast('auth-logout');
     }
 
     this.isAuthenticated = function() {
