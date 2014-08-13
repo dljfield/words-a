@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('UserTableSeeder');
+		$this->call('PostsTableSeeder');
 	}
 
 }
@@ -26,5 +27,24 @@ class UserTableSeeder extends Seeder {
 			'password' => Hash::make('aaa'),
 			'name' => 'Larry Test'
 		]);
+	}
+}
+
+class PostsTableSeeder extends Seeder {
+	public function run()
+	{
+		DB::table('posts')->truncate();
+
+		$body = "##Markdown \n A paragraph. Has *italics* and even **bold**. Absolutely shocking!";
+
+		for ($i=1; $i <= 5; $i++) {
+			Post::create([
+				'title' => 'Title ' + $i,
+				'body' => $body,
+				'summary' => 'Summary of post ' + $i
+			]);
+		}
+
+
 	}
 }
