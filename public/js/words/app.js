@@ -1,10 +1,12 @@
 angular.module('words', [
     'ui.router',
+    'ngResource',
     'words.controllers.AuthController',
     'words.controllers.UnpublishedController',
     'words.controllers.NavController',
     'words.services.AuthService',
     'words.services.Session',
+    'words.services.PostService',
     'words.directives.MainNavigation',
     'words.interceptors.AuthInterceptor'
 ])

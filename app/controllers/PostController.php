@@ -5,25 +5,25 @@ class PostController extends BaseController {
     public function index()
     {
         // return JSON containing all posts
-        $posts = Post::where('published', '=', 'true')->get();
-
-        return Response::json($posts, 200);
+        return Post::where('published', '=', true)
+        ->orderBy('published_at', 'DESC')
+        ->get()
+        ->toJson();
     }
 
     public function unpublished()
     {
         // return JSON containing all unpublished posts
-        $posts = Post::where('published', '=', 'false')->get();
-
-        return Response::json($posts, 200);
+        return Post::where('published', '=', false)
+        ->orderBy('created_at', 'DESC')
+        ->get()
+        ->toJson();
     }
 
     public function show($id)
     {
         // return JSON containing single post
-        $post = Post::find($id);
-
-        return Response::json($post, 200);
+        return Post::find($id)->toJson();
     }
 
     public function store()

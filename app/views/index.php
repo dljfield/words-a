@@ -15,6 +15,7 @@
 
     <!-- ANGULAR -->
     <script src="js/bower_components/angular/angular.js"></script>
+    <script src="js/bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
     <!-- WORDS.APP -->
@@ -24,6 +25,7 @@
     <script src="js/words/controllers/NavController.js"></script>
     <script src="js/words/services/AuthService.js"></script>
     <script src="js/words/services/Session.js"></script>
+    <script src="js/words/services/PostService.js"></script>
     <script src="js/words/directives/MainNavigation.js"></script>
     <script src="js/words/interceptors/AuthInterceptor.js"></script>
 
