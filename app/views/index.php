@@ -23,10 +23,13 @@
     <script src="js/words/controllers/AuthController.js"></script>
     <script src="js/words/controllers/UnpublishedController.js"></script>
     <script src="js/words/controllers/NavController.js"></script>
+    <script src="js/words/controllers/PostController.js"></script>
+    <script src="js/words/controllers/PostListController.js"></script>
     <script src="js/words/services/AuthService.js"></script>
     <script src="js/words/services/Session.js"></script>
     <script src="js/words/services/PostService.js"></script>
     <script src="js/words/directives/MainNavigation.js"></script>
+    <script src="js/words/directives/PostList.js"></script>
     <script src="js/words/interceptors/AuthInterceptor.js"></script>
 
 </body>

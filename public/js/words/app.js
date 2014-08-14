@@ -4,10 +4,13 @@ angular.module('words', [
     'words.controllers.AuthController',
     'words.controllers.UnpublishedController',
     'words.controllers.NavController',
+    'words.controllers.PostController',
+    'words.controllers.PostListController',
     'words.services.AuthService',
     'words.services.Session',
     'words.services.PostService',
     'words.directives.MainNavigation',
+    'words.directives.PostList',
     'words.interceptors.AuthInterceptor'
 ])
 
@@ -22,7 +25,8 @@ angular.module('words', [
         // Index of posts
         .state('home', {
             url: '/',
-            templateUrl: '/templates/posts/index.html'
+            templateUrl: '/templates/posts/index.html',
+            controller: 'PostListController'
         })
 
         // About page
