@@ -41,9 +41,17 @@ class PostsTableSeeder extends Seeder {
 			Post::create([
 				'title' => 'Title ' + $i,
 				'body' => $body,
-				'summary' => 'Summary of post ' + $i
+				'summary' => 'Summary of post ' + $i,
+				'published' => true
 			]);
 		}
+
+		// unpublished post
+		Post::create([
+			'title' => 'Unpublished Post',
+			'body' => $body,
+			'summary' => 'Summary of unpublished post.'
+		]);
 
 
 	}

@@ -5,7 +5,7 @@ class PostController extends BaseController {
     public function index()
     {
         // return JSON containing all posts
-        $posts = Post::where('published', '=', 'true');
+        $posts = Post::where('published', '=', 'true')->get();
 
         return Response::json($posts, 200);
     }
@@ -13,7 +13,7 @@ class PostController extends BaseController {
     public function unpublished()
     {
         // return JSON containing all unpublished posts
-        $posts = Post::where('published', '=', 'false');
+        $posts = Post::where('published', '=', 'false')->get();
 
         return Response::json($posts, 200);
     }
@@ -21,6 +21,9 @@ class PostController extends BaseController {
     public function show($id)
     {
         // return JSON containing single post
+        $post = Post::find($id);
+
+        return Response::json($post, 200);
     }
 
     public function store()
