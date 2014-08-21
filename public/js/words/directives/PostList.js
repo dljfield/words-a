@@ -4,6 +4,5 @@ angular.module('words.directives.PostList', [])
     return {
         restrict: 'E',
         templateUrl: '/templates/directives/post-list.html',
-        controller: 'PostListController'
     }
 })

@@ -4,13 +4,14 @@ angular.module('words', [
     'words.controllers.AuthController',
     'words.controllers.UnpublishedController',
     'words.controllers.NavController',
-    'words.controllers.PostController',
+    'words.controllers.SinglePostController',
     'words.controllers.PostListController',
     'words.services.AuthService',
     'words.services.Session',
     'words.services.PostService',
     'words.directives.MainNavigation',
     'words.directives.PostList',
+    'words.directives.SinglePost',
     'words.interceptors.AuthInterceptor'
 ])
 
@@ -50,7 +51,8 @@ angular.module('words', [
 
         .state('posts_single', {
             url: '/posts/:id',
-            templateUrl: '/templates/posts/single.html'
+            templateUrl: '/templates/posts/single.html',
+            controller: 'SinglePostController'
         })
 
         .state('login', {
