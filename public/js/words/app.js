@@ -12,6 +12,7 @@ angular.module('words', [
     'words.directives.MainNavigation',
     'words.directives.PostList',
     'words.directives.SinglePost',
+    'words.directives.Markdown',
     'words.interceptors.AuthInterceptor'
 ])
 

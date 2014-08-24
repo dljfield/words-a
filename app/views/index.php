@@ -17,6 +17,7 @@
     <script src="js/bower_components/angular/angular.js"></script>
     <script src="js/bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="js/bower_components/showdown/src/showdown.js"></script>
 
     <!-- WORDS.APP -->
     <script src="js/words/app.js"></script>
@@ -31,6 +32,7 @@
     <script src="js/words/directives/MainNavigation.js"></script>
     <script src="js/words/directives/PostList.js"></script>
     <script src="js/words/directives/SinglePost.js"></script>
+    <script src="js/words/directives/Markdown.js"></script>
     <script src="js/words/interceptors/AuthInterceptor.js"></script>
 
 </body>

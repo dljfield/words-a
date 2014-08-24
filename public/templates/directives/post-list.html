@@ -1,5 +1,5 @@
 <div ng-repeat="post in posts">
     <h3>{{ post.title }}</h3>
-    <div>{{ post.summary }}</div>
+    <markdown content="{{ post.summary }}"></markdown>
     <div>{{ post.created_at }}</div>
 </div>

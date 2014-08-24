@@ -1,5 +1,5 @@
 <div>
     <h3>{{ post.title }}</h3>
-    <div>{{ post.summary }}</div>
+    <markdown content="{{ post.body }}"></markdown>
     <div>{{ post.created_at }}</div>
 </div>
