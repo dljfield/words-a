@@ -7,9 +7,9 @@ WIP
 TODO:
 
 *These just need to be ported over from the previous version*
-- Display posts in the right places.
-- Have the posts markdown display correctly
-- Ability to create new posts
+- ~~Display posts in the right places.~~
+- ~~Have the posts markdown display correctly~~
+- ~~Ability to create new posts~~
 
 *Actually new stuff to implement*
 - Testing
