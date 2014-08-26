@@ -12,10 +12,22 @@ angular.module('words.services.PostService', [])
         return Post.get({id: id});
     };
 
+    this.save = function(post) {
+        return Post.save({}, {
+            title: post.title,
+            body: post.body,
+            summary: post.summary
+        }, function(success) {
+            alert('Successfully saved post.');
+        }, function(error) {
+            alert(error.data.message);
+        });
+    };
+
     this.unpublished = function() {
         var UnPubPost = $resource('/posts/unpublished');
         return UnPubPost.query();
-    }
+    };
 
     return this;
 

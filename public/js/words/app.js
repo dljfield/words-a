@@ -6,12 +6,14 @@ angular.module('words', [
     'words.controllers.NavController',
     'words.controllers.SinglePostController',
     'words.controllers.PostListController',
+    'words.controllers.CreatePostController',
     'words.services.AuthService',
     'words.services.Session',
     'words.services.PostService',
     'words.directives.MainNavigation',
     'words.directives.PostList',
     'words.directives.SinglePost',
+    'words.directives.CreatePost',
     'words.directives.Markdown',
     'words.interceptors.AuthInterceptor'
 ])
@@ -40,7 +42,8 @@ angular.module('words', [
         // protect
         .state('posts_create', {
             url: '/posts/create',
-            templateUrl: '/templates/posts/create.html'
+            templateUrl: '/templates/posts/create.html',
+            controller: 'CreatePostController'
         })
 
         // protect

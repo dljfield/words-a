@@ -3,12 +3,12 @@ angular.module('words.services.Session', [])
 .service('Session', function($window) {
 
     this.create = function(user, token) {
-        $window.sessionStorage.token = token;
+        this.token = token;
         this.user = user;
     };
 
     this.destroy = function() {
-        delete $window.sessionStorage.token;
+        this.token = null;
         this.user = null;
     };
 
@@ -17,7 +17,7 @@ angular.module('words.services.Session', [])
     };
 
     this.getToken = function() {
-        return $window.sessionStorage.token;
+        return this.token;
     };
 
     return this;
