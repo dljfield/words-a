@@ -11,44 +11,48 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
+		$this->call('UserTableSeeder');
 		$this->call('PostsTableSeeder');
-		$this->call('UsersTableSeeder');
 	}
 
 }
 
-class PostsTableSeeder extends Seeder {
-
-	public function run()
-	{
-		DB::table('posts')->truncate();
-
-		$body = "### Test Title \n A paragraph";
-		$summary = "Summary of post.";
-
-		$posts = [
-			['title' => 'First Post', 'body' => $body, 'summary' => $summary],
-			['title' => 'Second Post', 'body' => $body, 'summary' => $summary],
-			['title' => 'Third Post', 'body' => $body, 'summary' => $summary],
-			['title' => 'Fourth Post', 'body' => $body, 'summary' => $summary],
-			['title' => 'Fifth Post', 'body' => $body, 'summary' => $summary]
-		];
-
-		foreach ($posts as $post) {
-			Post::create($post);
-		}
-
-	}
-
-}
-
-class UsersTableSeeder extends Seeder {
-
+class UserTableSeeder extends Seeder {
 	public function run()
 	{
 		DB::table('users')->truncate();
 
-		User::create(['email' => 'a@a.a', 'password' => Hash::make('aaa')]);
+		User::create([
+			'email' => 'a@a.a',
+			'password' => Hash::make('aaa'),
+			'name' => 'Larry Test'
+		]);
 	}
+}
 
+class PostsTableSeeder extends Seeder {
+	public function run()
+	{
+		DB::table('posts')->truncate();
+
+		$body = "##Markdown \n A paragraph. Has *italics* and even **bold**. Absolutely shocking!";
+
+		for ($i=1; $i <= 5; $i++) {
+			Post::create([
+				'title' => "Title $i",
+				'body' => $body,
+				'summary' => "Summary of post $i",
+				'published' => true
+			]);
+		}
+
+		// unpublished post
+		Post::create([
+			'title' => 'Unpublished Post',
+			'body' => $body,
+			'summary' => 'Summary of unpublished post.'
+		]);
+
+
+	}
 }

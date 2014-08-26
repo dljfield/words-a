@@ -48,6 +48,19 @@ Route::filter('auth', function()
 	}
 });
 
+// Filter for authenticating a JWT
+Route::filter('auth.jwt_token', function()
+{
+	if (Request::header('Authorization')) {
+		try {
+			$token = JWT::decode(Request::header('Authorization'), 'test_key');
+		} catch (Exception $e) {
+			return Response::make('The authorization token is not valid.', 401);
+		}
+	} else {
+	    return Response::make('Unauthorized', 401);
+	}
+});
 
 Route::filter('auth.basic', function()
 {

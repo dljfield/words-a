@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPublisedOnAndSummaryToPostsTable extends Migration {
+class CreatePostsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,15 @@ class AddPublisedOnAndSummaryToPostsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('posts', function($table) {
+		Schema::create('posts', function($table)
+		{
+			$table->increments('id');
+			$table->string('title');
+			$table->text('body');
+			$table->text('summary');
+			$table->boolean('published')->default(false);
 			$table->dateTime('published_at')->nullable();
-			$table->text('summary')->nullable();
+			$table->timestamps();
 		});
 	}
 
@@ -25,10 +31,7 @@ class AddPublisedOnAndSummaryToPostsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('posts', function($table) {
-			$table->dropColumn('published_at');
-			$table->dropColumn('summary');
-		});
+		Schema::dropIfExists('posts');
 	}
 
 }
