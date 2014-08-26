@@ -29,6 +29,27 @@ class PostController extends BaseController {
     public function store()
     {
         // create a new post
+        $post = new Post();
+        $input = Input::all();
+
+        // validation
+        $validatorRules = [
+            'title' => 'required',
+            'body' => 'required',
+            'summary' => 'required'
+        ];
+
+        $validator = Validator::make(Input::all(), $validatorRules);
+
+        if ($validator->fails()) {
+            throw new Exception('The post submitted is invalid. How have you managed this?');
+        }
+
+        // saving to database
+        $post->title = $input['title'];
+        $post->body = $input['body'];
+        $post->summary = $input['summary'];
+        $post->save();
     }
 
 }
