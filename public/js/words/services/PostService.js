@@ -1,6 +1,6 @@
 angular.module('words.services.PostService', [])
 
-.factory('PostService', ['$resource', function($resource) {
+.factory('PostService', ['$http','$resource', function($http, $resource) {
 
     var Post = $resource('/posts/:id');
 
@@ -33,6 +33,11 @@ angular.module('words.services.PostService', [])
 
         single: function(id) {
             return this.Post.get({id: id});
+        },
+
+        publish: function(id) {
+            $http
+            .post('/posts/unpublished/' + id, {});
         }
     }
 

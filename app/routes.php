@@ -20,9 +20,11 @@ Route::get('/', 'IndexController@index');
 // POSTS
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/unpublished', ['before' => 'auth.jwt_token', 'uses' => 'PostController@unpublished']);
+Route::get('/posts/unpublished/{id}', ['before' => 'auth.jwt_token', 'uses' => 'PostController@show']);
 Route::get('/posts/{id}', 'PostController@show');
 
 Route::post('/posts', ['before' => 'auth.jwt_token', 'uses' => 'PostController@store']);
+Route::post('/posts/unpublished/{id}', ['before' => 'auth.jwt_token', 'uses' => 'PostController@publish']);
 
 // AUTH
 Route::post('/login', 'AuthController@login');

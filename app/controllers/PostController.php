@@ -20,6 +20,13 @@ class PostController extends BaseController {
         ->toJson();
     }
 
+    public function publish($id)
+    {
+        $post = Post::find($id);
+        $post->published = true;
+        $post->save();
+    }
+
     public function show($id)
     {
         // return JSON containing single post
@@ -30,7 +37,6 @@ class PostController extends BaseController {
     {
         // create a new post
         $post = new Post();
-        $input = Input::all();
 
         // validation
         $validatorRules = [
