@@ -12,6 +12,9 @@ TODO:
 - ~~Ability to create new posts~~
 
 *Actually new stuff to implement*
+- Ability to publish unpublished posts
+- Save login sessioin
+- Live markdown editor
 - Testing
 - Styling responsively (because unresponsive UIs are so gauche) using sass*
 
