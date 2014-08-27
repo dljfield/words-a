@@ -20,14 +20,21 @@ angular.module('words.services.PostService', [])
         }, function(success) {
             alert('Successfully saved post.');
         }, function(error) {
-            alert(error.data.message);
+            alert(error.data);
         });
     };
 
-    this.unpublished = function() {
-        var UnPubPost = $resource('/posts/unpublished');
-        return UnPubPost.query();
-    };
+    this.unpublished = {
+        Post: $resource('/posts/unpublished'),
+
+        all: function() {
+            return this.Post.query();
+        },
+
+        single: function(id) {
+            return this.Post.get({id: id});
+        }
+    }
 
     return this;
 
