@@ -2,6 +2,8 @@
 
 This is a single-page application written with AngularJS and Laravel acting as a blogging platform. The purpose is to learn how to use both AngularJS and Laravel to create applications.
 
+This has been abandoned in favour of a different approach, starting from a more traditional base in order to create a usable version 1 more quickly, which will then be enhanced with JavaScript on top.
+
 WIP
 
 TODO:
